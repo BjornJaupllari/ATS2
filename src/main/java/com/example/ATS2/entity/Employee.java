@@ -1,5 +1,6 @@
 package com.example.ATS2.entity;
 
+import com.example.ATS2.dto.User;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,8 +26,7 @@ public class Employee implements Serializable {
     @JoinColumn(name = "company_id", referencedColumnName = "id")
     private Company company;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;
+    @Column(name = "user_id")
+    private String user;
 
 }

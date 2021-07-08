@@ -1,5 +1,7 @@
 package com.example.ATS2.entity;
 
+import com.example.ATS2.dto.Applicant;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -34,9 +36,8 @@ public class Interview {
     @JoinColumn(name = "status_id")
     private Status status;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "aplikant_id")
-    private Applicant applicants;
+    @Column(name = "aplikant_id")
+    private String applicants;
 
     public Interview(int id, Date date, long duration, String description, Company company, Post posts, Status status, Applicant applicants) {
         this.id = id;

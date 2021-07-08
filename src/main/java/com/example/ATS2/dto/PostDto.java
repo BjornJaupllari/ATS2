@@ -1,8 +1,8 @@
 package com.example.ATS2.dto;
 
-import com.example.ATS.entity.Company;
-import com.example.ATS.entity.Interview;
-import com.example.ATS.entity.Type;
+import com.example.ATS2.entity.Company;
+import com.example.ATS2.entity.Type;
+import com.example.ATS2.entity.Interview;
 import lombok.Data;
 
 import java.util.Date;

@@ -1,7 +1,6 @@
 package com.example.ATS2.dto;
 
-import com.example.ATS.entity.Company;
-import com.example.ATS.entity.User;
+import com.example.ATS2.entity.Company;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,10 +1,15 @@
 package com.example.ATS2.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.util.Date;
 
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "post")
 
 public class Post {

@@ -1,5 +1,6 @@
 package com.example.ATS2.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -10,6 +11,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "type")
 @Getter
+@AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class Type implements Serializable {
