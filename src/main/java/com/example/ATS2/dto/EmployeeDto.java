@@ -10,6 +10,6 @@ public class EmployeeDto {
 
     private int id;
     private Company company;
-    private User user;
+   // private User user;
 
 }

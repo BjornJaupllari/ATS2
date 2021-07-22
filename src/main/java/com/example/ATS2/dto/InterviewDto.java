@@ -10,7 +10,8 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class InterviewDto {
+public class
+InterviewDto {
 
     private int id;
     private Date date;
@@ -19,6 +20,6 @@ public class InterviewDto {
     private Company company;
     private Post posts;
     private Status status;
-    private Applicant applicants;
+    //private Applicant applicants;
 
 }
