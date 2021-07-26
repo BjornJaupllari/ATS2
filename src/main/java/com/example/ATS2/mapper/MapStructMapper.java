@@ -10,16 +10,16 @@ import java.util.List;
 public interface MapStructMapper {
 
     TypeDto typeToDto(Type type);
-
+    List<TypeDto> toTypeDtos(List<Type>types);
     Type typeToEntity(TypeDto typeDto);
 
 
-    Status statusToDto(Status status);
-
+    StatusDto statusToDto(Status status);
+    List<StatusDto> toStatusDtos(List<Status>statuses);
     Status statusToEntity(StatusDto statusDto);
 
     PostDto postToDto(Post post);
-
+    List<PostDto> toPostDtos(List<Post>posts);
     Post postToEntity(PostDto postDto);
 
     InterviewDto interviewToDto(Interview interview);

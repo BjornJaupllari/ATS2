@@ -1,9 +1,6 @@
 package com.example.ATS2.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,6 +8,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "type")
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
