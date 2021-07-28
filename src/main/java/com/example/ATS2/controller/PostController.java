@@ -16,8 +16,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/vi/post")
 public class PostController {
-    private final PostService postService;
-    private final MapStructMapper mapStructMapper;
+    private PostService postService;
+    private MapStructMapper mapStructMapper;
 
     @GetMapping
     public ResponseEntity<List<PostDto>> findAll() {
@@ -41,7 +41,6 @@ public class PostController {
     @PutMapping("/{id}")
     public ResponseEntity<PostDto> update(@PathVariable int id, @RequestBody PostDto postDto) {
         Post post = mapStructMapper.postToEntity(postDto);
-        post.setId(id);
 
         postService.save(post);
 

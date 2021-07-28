@@ -20,8 +20,8 @@ import java.util.Optional;
 @RequestMapping("/api/interview")
 public class InterviewController {
     @Autowired
-    private final InterviewServices interviewServices;
-    private final MapStructMapper mapStructMapper;
+    private  InterviewServices interviewServices;
+    private  MapStructMapper mapStructMapper;
 
     @GetMapping
     public ResponseEntity<List<InterviewDto>> findAll() {
@@ -45,7 +45,7 @@ public class InterviewController {
     @PutMapping("/{id}")
     public ResponseEntity<InterviewDto> update(@PathVariable int id, @RequestBody InterviewDto interviewDto) {
         Interview interview = mapStructMapper.interviewToEntity(interviewDto);
-        interview.setId(id);
+
 
         interviewServices.save(interview);
 

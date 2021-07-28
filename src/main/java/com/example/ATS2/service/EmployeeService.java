@@ -4,6 +4,7 @@ import com.example.ATS2.entity.Company;
 import com.example.ATS2.entity.Employee;
 import com.example.ATS2.repository.CompanyRepository;
 import com.example.ATS2.repository.EmployRepository;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +15,11 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@NoArgsConstructor
 
 public class EmployeeService {
-    @Autowired
-    private final EmployRepository employRepository;
+
+    private EmployRepository employRepository;
 
 
     // getall

@@ -5,6 +5,7 @@ import com.example.ATS2.entity.Company;
 
 import com.example.ATS2.mapper.MapStructMapper;
 import com.example.ATS2.service.CompanyServices;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,13 +16,15 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@NoArgsConstructor
 @RequiredArgsConstructor
 @RequestMapping("/api/company/")
 public class CompanyController {
 
-    @Autowired
-    private final CompanyServices companyServices;
-    private final MapStructMapper mapStructMapper;
+
+    private  CompanyServices companyServices;
+
+    private  MapStructMapper mapStructMapper;
 
     @GetMapping
     public ResponseEntity<List<CompanyDto>> findAll() {
@@ -45,7 +48,7 @@ public class CompanyController {
     @PutMapping("/{id}")
     public ResponseEntity<CompanyDto> update(@PathVariable int id, @RequestBody CompanyDto companyDto) {
         Company company = mapStructMapper.companyToEntity(companyDto);
-        company.setId(id);
+
 
         companyServices.saveCompany(company);
 

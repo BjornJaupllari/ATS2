@@ -17,8 +17,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/vi/type")
 public class TypeController {
-    private final TypeService typeService;
-    private final MapStructMapper mapStructMapper;
+    private  TypeService typeService;
+    private  MapStructMapper mapStructMapper;
 
     @GetMapping
     private ResponseEntity<List<TypeDto>> findAll(){
@@ -39,7 +39,6 @@ public class TypeController {
     @PutMapping("/{id}")
     public ResponseEntity<TypeDto> update(@PathVariable int id, @RequestBody TypeDto typeDto){
         Type type = mapStructMapper.typeToEntity(typeDto);
-        type.setId(id);
 
         typeService.save(type);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(typeDto);

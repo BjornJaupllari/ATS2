@@ -17,8 +17,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/vi/status")
 public class StatusController {
-    private final StatusService statusService;
-    private final MapStructMapper mapStructMapper;
+    private StatusService statusService;
+    private MapStructMapper mapStructMapper;
 
     @GetMapping
     public ResponseEntity<List<StatusDto>> findAll(){
@@ -40,7 +40,7 @@ public class StatusController {
     @PutMapping("/{id}")
     public ResponseEntity<StatusDto> update(@PathVariable int id, @RequestBody StatusDto statusDto){
         Status status = mapStructMapper.statusToEntity(statusDto);
-        status.setId(id);
+
 
         statusService.save(status);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(statusDto);

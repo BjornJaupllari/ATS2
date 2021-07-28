@@ -3,6 +3,8 @@ package com.example.ATS2.service;
 
 import com.example.ATS2.entity.Type;
 import com.example.ATS2.repository.TypeRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +12,12 @@ import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @Service
 public class TypeService {
 
-    private final TypeRepository typeRepository;
+    private TypeRepository typeRepository;
 
     public List<Type> findAll() {
         return typeRepository.findAll();
