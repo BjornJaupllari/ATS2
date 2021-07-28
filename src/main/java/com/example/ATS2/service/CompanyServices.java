@@ -3,6 +3,8 @@ package com.example.ATS2.service;
 import com.example.ATS2.entity.Company;
 import com.example.ATS2.execption.UserNotFoundExeption;
 import com.example.ATS2.repository.CompanyRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -15,11 +17,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@NoArgsConstructor
+@AllArgsConstructor
 @RequiredArgsConstructor
 public class CompanyServices {
 
-    @Autowired
-    private final CompanyRepository companyRepository;
+
+    private  CompanyRepository companyRepository;
 
 
 // getall

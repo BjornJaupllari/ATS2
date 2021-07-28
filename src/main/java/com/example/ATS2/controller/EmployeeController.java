@@ -4,6 +4,7 @@ import com.example.ATS2.dto.EmployeeDto;
 import com.example.ATS2.entity.Employee;
 import com.example.ATS2.mapper.MapStructMapper;
 import com.example.ATS2.service.EmployeeService;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,11 +16,12 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
+@NoArgsConstructor
 @RequestMapping("/api/employee")
 public class EmployeeController {
     @Autowired
-    private final EmployeeService employeeService;
-    private final MapStructMapper mapStructMapper;
+    private EmployeeService employeeService;
+    private MapStructMapper mapStructMapper;
 
     @GetMapping
     public ResponseEntity<List<EmployeeDto>> findAll() {
@@ -43,7 +45,7 @@ public class EmployeeController {
     @PutMapping("/{id}")
     public ResponseEntity<EmployeeDto> update(@PathVariable int id, @RequestBody EmployeeDto employeeDto) {
         Employee employee = mapStructMapper.employeeToEntity(employeeDto);
-        employee.setId(id);
+
 
         employeeService.save(employee);
 

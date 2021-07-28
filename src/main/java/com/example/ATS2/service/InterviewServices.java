@@ -2,6 +2,8 @@ package com.example.ATS2.service;
 
 import com.example.ATS2.entity.Interview;
 import com.example.ATS2.repository.InterviewRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,10 +13,13 @@ import java.util.List;
 import java.util.Optional;
 @Service
 @RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class InterviewServices {
-    @Autowired
-    private final InterviewRepository interviewRepository;
+
+
+    private  InterviewRepository interviewRepository;
 
 
     // getall
